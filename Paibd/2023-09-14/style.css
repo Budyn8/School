@@ -1,0 +1,61 @@
+html, body{
+    height: 100%;
+    font-family: Lucida Console;
+    color: rgba(190, 120, 10,0.8);
+}
+header{
+    text-align: center;
+    font-size: 7rem;
+    padding: 20px;
+}
+main{
+    display: flex;
+    width: 100%;
+    padding: 40px;
+}
+section{
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    margin: 0.4rem;
+}
+footer{
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    color: whitesmoke;
+}
+p{
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+}
+.p-container{
+    background-color: #be790ae8;
+}
+.custom-shape-divider-bottom-1694686801 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1694686801 svg {
+    position: relative;
+    display: block;
+    width: calc(128% + 1.3px);
+    height: 171px;
+}
+
+.custom-shape-divider-bottom-1694686801 .shape-fill {
+    fill: #BE780ACC;
+}
+
