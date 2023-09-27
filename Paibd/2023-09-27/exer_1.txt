@@ -1,0 +1,6 @@
+1. SELECT name FROM countries WHERE name like '%New%';
+2. SELECT name, national_day FROM countries WHERE YEAR(national_day) > 1950; 
+3. SELECT name, area FROM countries WHERE 1 ORDER BY area DESC LIMIT 1; 
+4. SELECT cont.name, COUNT(coun.name) FROM countries as coun INNER JOIN regions AS regi ON regi.region_id = coun.region_id INNER JOIN continents AS cont ON cont.continent_id = regi.continent_id WHERE 1 GROUP BY cont.continent_id;
+5. SELECT name, population FROM countries INNER JOIN country_stats on country_stats.country_id = countries.country_id WHERE country_stats.year = 2015 ORDER BY population DESC LIMIT 10; 
+6. SELECT name FROM `countries` c INNER JOIN country_languages as c_l ON c.country_id = c_l.country_id INNER JOIN languages as l on l.language_id = c_l.language_id WHERE l.language = "English" AND c_l.official = 1; 

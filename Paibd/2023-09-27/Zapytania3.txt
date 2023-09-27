@@ -1,0 +1,23 @@
+Zapytania:
+
+1.Wypisz nazwy państw, których nazwa zawiera słowo 'New'
+2.Wypisz nazwy państw, oraz dzień odzyskania niepodlebłości (national_day) , 
+	dla państw, które odzyskały niepodległość po 1950 roku (Funkcja YEAR)
+3.Wypisz państwo i jego powierzchnię, dla państwa o największej powierzchni
+4.Wypisz nazwę kontynentu oraz liczbę państw na danym kontynecie
+5.Wypisz 10 państw oraz ich populację, dla państw o największej populacji w 2015 roku (country_stats)
+6.Wypisz państwa, w których oficjalnym językiem jest 'English'  
+7.Wypisz język oraz liczbę państw w których się danego jezyka używa.
+8.Wypisz kraje oraz daty odzyskania niepodległości w kolejności od najpóżniejszej 
+	do najwcześniejszej (najpóźniejsza to najbliższa aktualnej dacie)
+9.Wypisz nazwę kontynentu oraz średnią powierzchnię kraju w 
+ 	Africa 	521558.224138
+
+10.Wypisz kontynent i iloma językami mówi się na każdym z kontynentów  
+
+11.Wypisz państwa, w których uzywa się więcej niż jednego języka 
+12.Wypisz państwa i ich powierzchnię, dla państw o największej i najmniejszej powierzchni   
+
+ name 	area 	
+Russian Federation 	17075400.00
+Holy See (Vatican City State) 	0.40
