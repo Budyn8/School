@@ -64,6 +64,8 @@
                 $row = mysqli_fetch_row($query);
 
                 echo "<h4>$row[1]</h4><h5>$row[2]</h5>";
+
+                mysqli_close($conn);
             ?>
         </section>
     <footer>
