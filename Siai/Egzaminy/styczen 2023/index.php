@@ -70,10 +70,10 @@
         </section>
     <footer>
         Autorem aplikacji jest: 00000000000
-        <li>
-            <ul>skontaktuj się</ul>
-            <ul>poznaj naszą firmę</ul>
-        </li>
+        <ul>
+            <li>skontaktuj się</li>
+            <li>poznaj naszą firmę</li>
+        </ul>
     </footer>
 </body>
 </html>
