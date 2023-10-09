@@ -1,0 +1,9 @@
+1. SELECT DISTINCT ProductID, ProductName FROM products WHERE ProductID IN (SELECT ProductID FROM order_details WHERE Quantity > 30);
+
+2. SELECT DISTINCT CustomerID, CustomerName, ContactName FROM customers WHERE CustomerID IN (SELECT CustomerID FROM orders WHERE YEAR(OrderDate) = 1996 AND MONTH(OrderDate) = 7);
+
+3. SELECT DISTINCT COUNT(*) FROM employees WHERE EmployeeID IN (SELECT EmployeeID from orders WHERE YEAR(OrderDate) = 1996 AND MONTH(OrderDate) = 7);
+
+4. SELECT ProductId, ProductName FROM products WHERE CategoryID IN (SELECT CategoryID FROM categories WHERE CategoryName = 'Condiments');
+
+5. SELECT CustomerID, CustomerName, ContactName FROM customers WHERE CustomerID IN(SELECT CustomerID FROM (SELECT OrderID, COUNT(ProductID) as Ilosc FROM order_details GROUP By OrderID) as tabela INNER JOIN orders as o on o.OrderID = tabela.OrderID WHERE Ilosc > 2);

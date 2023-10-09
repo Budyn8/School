@@ -1,0 +1,5 @@
+1. SELECT a.imie, a.nazwisko FROM wypozyczenia as w LEFT JOIN ksiazki as k on k.id = w.id_ksiazka LEFT JOIN autorzy as a ON a.id = k.id_autor WHERE a.imie IS NOT NULL GROUP BY a.id ASC LIMIT 1
+2. SELECT k.tytul, w.data_wypozyczenia FROM wypozyczenia as w LEFT JOIN ksiazki as k ON k.id = w.id_ksiazka WHERE w.data_oddania IS NULL;
+3. SELECT tytul, COUNT(tytul) as 'ilosc wypozyczen' FROM ksiazki as k RIGHT JOIN wypozyczenia as w ON k.id = w.id_ksiazka GROUP BY tytul ORDER BY COUNT(tytul) DESC LIMIT 1
+4. SELECT c.imie, c.nazwisko, a.imie, a.nazwisko, count(a.id) FROM czytelnicy as c INNER JOIN wypozyczenia as w ON c.id = w.id_czytelnik INNER JOIN ksiazki as k ON w.id_ksiazka = k.id INNER JOIN autorzy as a ON a.id = k.id_autor GROUP BY c.id, a.id;
+5. SELECT c.imie, c.nazwisko, count(w.id_ksiazka) FROM czytelnicy as c INNER JOIN wypozyczenia as w ON c.id = w.id_czytelnik GROUP BY c.id

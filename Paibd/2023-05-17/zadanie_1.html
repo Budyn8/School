@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            width: 50%;
+            margin: auto;
+            margin-top: 60px;
+        }
+        input{
+            margin: 5px;
+        }
+        input[type='button']{
+            border: 0;
+            padding: 10px;
+            background-color: lightblue;
+        }
+        p{
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header></header>
+        <input type="number" name="input_1" id="input_1" min="1">
+        <input type="number" name="input_2" id="input_2" min="1">
+        <p></p>
+    </main>
+    <script>
+        let tabela = []
+
+        for(i = 0; i < 100; i++){
+            let liczba = Math.floor(Math.random() * 100)
+            tabela.push(liczba)
+        }
+        let len = Object.keys(tabela).length
+
+        main = document.querySelector('main')
+
+        title = document.querySelector('header')
+
+        input_1 = document.getElementById('input_1')
+        input_2 = document.getElementById('input_2')
+
+        output = document.querySelector('p')
+
+        // title = document.createElement('header')
+        title_text = document.createTextNode(`Wybierz miejsce od 1 do ${len} aby zobaczyć sumę:`)
+        title.append(title_text)
+        // main.append(title)
+
+        // input_1 = document.createElement('input')
+        // input_1.type = 'number'
+        // input_1.name = 'input_1'
+        // input_1.min = 1
+        input_1.max = len
+        // main.append(input_1)
+
+
+        // input_2 = document.createElement('input')
+        // input_2.type = 'number'
+        // input_1.name = 'input_2'
+        // input_2.min = 1
+        input_2.max = len
+        // main.append(input_2)
+
+        // output = document.createElement('p')
+        // main.append(output)
+
+        let tabela_2 = [0]
+
+        for(value in tabela){
+            tabela_2.push(tabela[value] + tabela_2[value])
+        }
+
+        input_1.addEventListener('input', () => {
+            
+            if(Number(input_1.value) > Number(input_1.max)){
+                input_1.value = input_1.max - 1
+            }
+
+            if(Number(input_1.value) < Number(input_1.min)){
+                input_1.value = input_1.min
+            }
+            wypisz_dane()
+        })
+
+        input_2.addEventListener('input', () => {
+            if(Number(input_2.value) > Number(input_2.max)){
+                input_2.value = input_2.max
+            }
+
+            if(Number(input_2.value) < Number(input_2.min)){
+                input_2.value = Number(input_2.min) + 1
+            }
+            wypisz_dane()
+        })
+
+        function wypisz_dane(){
+
+            liczba_1 = input_1.value
+            liczba_2 = input_2.value
+
+            output_text = tabela_2[liczba_2] - tabela_2[liczba_1-1]
+
+            output_text < 0 ? output_text *= -1 : 0;
+            !output_text ? output_text = 'Wpisz obie liczby': 0;
+
+            output.innerHTML = output_text
+        }
+        
+
+    </script>
+</body>
+</html>

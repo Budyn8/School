@@ -1,0 +1,5 @@
+1. Wypisz wszystkie unikalne produkty ( ProductId, ProductName) z tabeli products, które były zamawiane w partiach większych niż 5 sztuk kazdorazowo.
+2. Wypisz wszystkich unikalnych klientów ( CustomerID, CustomerName, ContactName) z tabeli customers, którzy składali zamówienia w lipcu 1996 roku.
+3. Wypisz unikalną liczbę pracowników ( tabela employees), którzy obsługiwali zamówienia w lipcu 1996  roku.
+4. Wypisz wszystkie unikalne produkty ( ProductId, ProductName) z tabeli products, które są z kategorii Condiments
+5. Wypisz wszystkich unikalnych klientów ( CustomerID, CustomerName, ContactName) z tabeli customers, którzy składali zamówienia zawierające przynajmniej 3 różna produkty.

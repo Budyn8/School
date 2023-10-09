@@ -1,0 +1,53 @@
+body{
+    font-family: Georgia;
+}
+
+section{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    float: left;
+}
+
+#sec1{
+    width: 30%;
+}
+
+#sec2{
+    width: 70%;
+    overflow: scroll;
+}
+
+footer{
+    background-color: dimgray;
+    color: white;
+}
+
+ul, img{
+    float: left;
+}
+
+p, img{
+    padding: 10px;
+}
+
+img{
+    border: solid 1px white;
+}
+
+button#indigo{
+    background-color: indigo;
+}
+
+button#steelblue{
+    background-color: steelblue;
+}
+
+button#olive{
+    background-color: olive;
+}
+article{
+    width: 100%;
+    float: left;
+}
+

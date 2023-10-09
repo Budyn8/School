@@ -1,0 +1,5 @@
+1. SELECT YEAR(data_wypozyczenia), MONTH(data_wypozyczenia), COUNT(*) as ilosc from wypozyczenia GROUP BY MONTH(data_wypozyczenia), YEAR(data_wypozyczenia);
+2. SELECT id_ksiazka from wypozyczenia LEFT JOIN ksiazki as k ON id_ksiazka = k.id WHERE k.id is NULL;
+3. SELECT tytul, imie, nazwisko, nazwa FROM autorzy as a INNER JOIN ksiazki as b ON a.id = b.id_autor INNER JOIN wydawnictwa as c ON b.id_wydawnictwo = c.id;
+4. SELECT imie, count(id_ksiazka) FROM czytelnicy as c INNER JOIN wypozyczenia as w ON c.id = w.id_czytelnik GROUP BY id_czytelnik;
+5. SELECT imie, nazwisko FROM czytelnicy as c INNER JOIN wypozyczenia as w ON c.id = w.id_czytelnik WHERE data_oddania - data_wypozyczenia < 30 GROUP BY nazwisko;

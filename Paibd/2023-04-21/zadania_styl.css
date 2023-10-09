@@ -1,0 +1,21 @@
+article{
+    width: 50%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+input{
+    width: 20%;
+}
+div{
+    height: 10px;
+}
+#wynik:focus{
+    outline: none;
+}
+main{
+    display: flex;
+}
