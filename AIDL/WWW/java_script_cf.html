@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <script>
+    function newFile(){
+      date = new Date();
+      const todaysDate = date.toLocaleDateString()
+      path = 'C:\\xampp\\htdocs\\5Ti\\School\\Paibd\\' + todaysDate.replaceAll('.', '-') 
+      
+      console.log(path)
+    }
+  </script>
+
+<body onload="newFile()">
+</body>
+</html>

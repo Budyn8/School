@@ -8,7 +8,7 @@
 <body>
     <header></header>
     <main>
-    <input type="button" value="Creating usin Js">
+        
     <form action="#" method="post">
         
     <input type="submit" value="Creating using PhP">
