@@ -1,0 +1,23 @@
+Korzystając z bazy w3schools wykonaj poniższe zadania:
+
+Zadanie 1
+W lewym oknie:
+ - w tabel zawierajacej nagłówki "Nazwisko", "Imię", "Dodatkowe informacje" wypisz dane pracowników znajdujących się 
+   w tabeli employees (LastName, FirstName, Notes). 
+
+
+Zadanie 2
+W prawym oknie: 
+ - ustaw nazwę dla input-u numerycznego - "ilość". 
+ - input tekstowy zamień na listę rozwijana zawierającą nazwę produktu i zwracajacą jego productid z opisem pola "produkt"
+ - dane do listy pobierz z tabeli products (ProductName, ProductID)
+ - na podstawie ilości oraz produktu wykonaj zapytanie, które zwróci wartość zamówienia wyliczone na podstawie ceny produktu 
+   znajdującego się w polu Price w tabeli products    
+ - zwróconą przez bazę wartość wypisz w postaci: "Koszt zamówienia: {ilość} produktów {ProductName} wynosi {wartość zamówienia zwrócona z bazy}"
+
+Zadanie 3
+W prawym oknie: 
+  - utwórz 5 pól typu napisowego z opisami: "Imię", "Nazwisko", "Data urodzenia", "Plik ze zdjęciem" oraz "Dodatkowe informacje"
+  - na podstawie wprowadzonych informacji w ww. pola utwórz wpis w tabeli  employees (FirstName, LastName, BirthDate, Photo, Notes)
+  - Po dodaniu pracownika do bazy wypisz na ekran komuniktat informujący o dadaniu pracownika 
+   

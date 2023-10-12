@@ -1,0 +1,48 @@
+body{
+    font-family: Cambria;
+}
+
+main{
+    display: flex;
+}
+
+header, footer{
+    background-color: #829EB9;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+nav, section{
+    background-color: #B3C6D9;
+    height: 400px;
+    width: 25%;
+    padding-top: 100px;
+}
+
+article{
+    background-color: #E0E9F1;
+    height: 400px;
+    width: 50%;
+    text-align: center;
+    padding-top: 100px;
+}
+
+tr{
+    border: solid 1px dimgray;
+    width: 80%;
+    margin: auto;
+}
+
+td, th{
+    border: solid 1px dimgray;
+}
+
+
+table tr td:hover{
+    background-color: #829EB9;
+}
+img{
+    width: 100%;
+    border-radius: 20px;
+}

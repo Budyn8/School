@@ -1,0 +1,4 @@
+1. SELECT cena, pojemnosc FROM farby WHERE kolor = 'czerwony';
+2. SELECT kolor, (cena/pojemnosc) as 'cena jednostkowa' FROM farby;
+3. SELECT kolor, SUM(liczba_puszek) FROM malowanie as m INNER JOIN farby as f ON m.id_farby = f.id_farby WHERE id_pomieszczenia = 1 GROUP BY kolor
+4. CREATE VIEW pomieszczenie1 AS SELECT id_sciany, id_farby, liczba_puszek FROM malowanie WHERE id_pomieszczenia = 1; 

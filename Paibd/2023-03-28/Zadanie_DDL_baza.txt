@@ -1,0 +1,18 @@
+1. Utwórz bazę o nazwie Szkola
+2. W powyższej bazie utwórz tabelę Uczen zawierającą naztępujące pola:
+	Uczen_id - pole auto numerowane od wartości 100
+	Imie - pole tekstowe o rozmiarze 30 - nie może zawierać wartości null
+	Nazwisko - pole tekstowe o rozmiarze 30
+3. W powyższej bazie utwórz tabelę Klasa zawierającą naztępujące pola:   
+	Klasa_id pole auto numerowane od wartości 1
+	Poziom - wartość numeryczna nie może zawierać wartości null
+	Nazwa = pole tekstowe o rozmiarze 10 - nie może zawierać wartości null
+4. Zmień nazwę pola Nazwa w tabeli Klasa na Nazwa_klasy
+5. Utwórz klucz główny na polu Uczen_id w tabeli Uczen
+6. Utwórz klucz główny na polu Klasa_id w tabeli Klasa
+7. Dodaj do tabeli Uczen pole o nazwie Klasa_id
+8. Utwórz index o nazwie idx_Klasa_id na polu Klasa_id w tabeli Uczen
+9. Zmodyfikuj definicję pola Nazwisko w tabeli Uczen, aby uniemożliwić wprowadzanie do tego pola wartości null
+10. Utwórz klucz obcy o nazwie FK_Klasa_id na polu Klasa_id w tabeli Uczen jako referencję do pola Klasa_id w tabeli Klasa
+11. Ustaw wartość domyślną dla pola Nazwisko w tabeli Uczen na wartość 'Nowak'
+12  Ustaw wartość domyślną dla pola Imie w tabeli Uczen na wartość 'Adam'

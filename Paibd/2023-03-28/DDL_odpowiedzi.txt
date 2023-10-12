@@ -1,0 +1,22 @@
+1.	CREATE DATABASE Szkola;
+
+2,5.	CREATE TABLE Uczen(Uczen_id int NOT NULL AUTO_INCREMENT, Imie varchar(30) NOT NULL, Nazwisko 	varchar(30),PRIMARY KEY(Uczen_id));
+	ALTER TABLE Uczen AUTO_INCREMENT = 100;
+	
+
+3,6.	CREATE TABLE Klasa(Klasa_id int NOT NULL AUTO_INCREMENT, Poziom int NOT NULL, Nazwa varchar(10) NOT NULL, 	PRIMARY KEY(Klasa_id));
+	ALTER TABLE Klasa AUTO_INCREMENT = 1;
+
+4.	ALTER TABLE Klasa CHANGE Nazwa Nazwa_klasy varchar(10) NOT NULL;
+
+7.	ALTER TABLE Uczen ADD Klasa_id int;
+
+8.	CREATE INDEX idx_Klasa_i ON Uczen(Klasa_id);
+
+9.	ALTER TABLE Uczen MODIFY Nazwisko varchar(30) NOT NULL;
+
+10.	ALTER TABLE Uczen ADD CONSTRAINT FK_Klasa_id FOREIGN KEY(Klasa_id) REFERENCES Klasa(Klasa_id);
+
+11.	ALTER TABLE Uczen ALTER Nazwisko SET DEFAULT 'Nowak';	
+
+12.	ALTER TABLE Uczen ALTER Imie SET DEFAULT 'Adam';

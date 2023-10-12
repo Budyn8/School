@@ -1,0 +1,2 @@
+3. SELECT SUM(liczba_dn) FROM `rezerwacje` WHERE sezon = 'zima';
+4. UPDATE rezerwacje SET liczba_dn = 4 WHERE liczba_dn < 4;

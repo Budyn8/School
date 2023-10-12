@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remonty mieszkań</title>
+    <link rel="stylesheet" href="remont.css">
+    <script src="JS.js"></script>
+</head>
+<body>
+    <nav>
+        <section>
+            <img src="logo.png" alt="">
+        </section>
+        <section>
+            <a href="index.html">O FIRMIE</a>
+        </section>
+        <section>
+            <a href="adres.html">ADRES</a>
+        </section>
+        <section>
+            <a href="policz.html">POLICZ</a>
+        </section>
+        <section><a href="https://www.jakremontowac.pl/">LINKI</a></section>
+    </nav>
+    <main>
+        <h1>Kafelkowanie łazienki</h1>
+        <p>powierzchnia w m2:<input type="integer" id="powierzchnia"></p>   
+        <input type="radio" name="kafelki" id="400">
+        <label for="kafeliki">Płytki 20 x 20 cm</label>
+        <br>
+        <input type="radio" name="kafelki" id="300">
+        <label for="kafeliki">Płytki 25 x 12 cm</label>
+        <p><button onclick="policz()">Przelicz</button></p>
+        <p id="wynik"></p>
+    </main>
+    <footer><p>AUTOR:00000000000</p></footer>
+</body>
+</html>

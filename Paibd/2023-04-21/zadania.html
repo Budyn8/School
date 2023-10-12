@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="zadania_styl.css">
+</head>
+<body onload="options()">
+    <main>
+    <article class="zadanie_1">
+
+        <div class="title">
+            Zamiana liczby z systemu
+        </div>
+
+        <label for="liczba_wpisana_1">Wpisz liczbę w wybranym systemie liczbowym</label>
+        <input type="text" id="liczba_wpisana_1" value="5A6" name="liczba_wpisana_1">
+
+        <br>
+
+        <label for="system_liczbowy_1">Zaznacz system liczbowy</label>
+        <select type="integer" id="system_liczbowy_1" name="system_liczbowy_1" class="options"></select>
+
+        <br>
+
+        <input type="button" value="Przelicz" id="submit_1">
+
+        <br>
+
+        <div id="wynik_1"></div>
+
+    </article>
+    <article class="zadanie_1">
+
+        <div class="intro"></div>
+
+        <label for="liczba_wpisana_2">Wpisz liczbę dziesiętną</label>
+        <input type="text" id="liczba_wpisana_2" value="1447" name="liczba_wpisana_2">
+
+        <br>
+
+        <label for="liczba_wpisana_2">Zaznacz system liczbowy</label>
+        <Select type="integer" id="system_liczbowy_2" name="system_liczbowy_2" class="options"></Select>
+
+        <br>
+
+        <input type="button" value="Przelicz" id="submit_2">
+
+        <br>
+
+        <div id="wynik_2"></div>
+
+    </article>
+    </main>
+
+    <script src="zadanie_1.js"></script>
+    <script src="zadanie_2.js"></script>
+    <script src="options_renderer.js"></script>
+
+</body>
+</html>

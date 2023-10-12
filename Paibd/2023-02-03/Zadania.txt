@@ -1,0 +1,6 @@
+1.Wypisz imię i nazwisko autora najczęściej czytanego tzn. którego książki są najczęściej wypożyczane.
+2.Wypisz tytuły książek i daty wypożyczenia, które są nadal wypożyczone.
+3.Wypisz tytuły książek najczęściej wypożyczane.
+4.Dla każdego czytelnika (imię i nazwisko) wypisz ulubionego autora (imię i nazwisko) - ulubiony autor to autor,
+którego książki są najczęściej czytane przez danego czytelnika.
+5.Wypisz ile książek przeczytał każdy z czytelników

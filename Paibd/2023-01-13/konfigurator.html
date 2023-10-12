@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style w JavaScript</title>
+    <link rel="stylesheet" href="styl6.css">
+    <script>
+
+
+        let section2;
+
+        function background_color(bgcolor){
+            section2 = document.getElementById('sec2')
+            section2.style.backgroundColor = bgcolor
+        }
+        
+        function color_change(txColor){
+            section2 = document.getElementById('sec2')
+            section2.style.color = txColor
+        } 
+
+        function text_size(size){
+            section2 = document.getElementById('sec2')
+            section2.style.fontSize = size
+        }
+
+        function border(x, value){
+            section2 = document.getElementById('img')
+            if(!x.checked){
+                value = "0px"
+            }
+            section2.style.border = value
+        }
+
+        function radio(value){
+            section2 = document.getElementById('ul')
+            section2.style.listStyle = value
+        }
+
+    </script>
+</head>
+<body>
+    <main>
+        <section id="sec1">
+            <h1>Konfigurator stylu</h1>
+
+            <p>Podaj kolor tła</p>
+            <button id="indigo" onclick="background_color('indigo')">Indigo</button>
+            <button id="steelblue" onclick="background_color('steelblue')">SteelBlue</button>
+            <button id="olive" onclick="background_color('olive')">Olive</button>
+
+            <p>Podaj kolor czcionki</p>
+            <select id="color" onchange="color_change(value)">
+                <option value="white">White</option>
+                <option value="tan">Tan</option>
+                <option value="bisque">Bisque</option>
+                <option value="plum">Plum</option>
+            </select>
+
+            <p>Podaj rozmiar czcionki</p>
+            <input type="text" id="input" onblur="text_size(value)">
+
+            <p>Czy rysunek ma mieć ramkę?</p>
+            <label for="chTak">Rysuj ramkę</label>
+            <input type="checkbox" name="chTak" id="chTak" value="solid 1px white" checked onchange="border(this, value)">
+
+            <p>Jaki jest typ punktora listy?</p>            
+            <input type="radio" name="radio" value="disc" onclick="radio(value)" checked>
+            <label for="radio">dysk</label>
+            <br>
+            <input type="radio" name="radio" value="square" onclick="radio(value)">
+            <label for="">kwadrat</label>
+            <br>
+            <input type="radio" name="radio" value="circle" onclick="radio(value)">
+            <label for="radio">okrąg</label>
+
+        </section>
+        <section id="sec2">
+            <article>
+            <img src="gibraltar.jpg" alt="" height="300px" id="img">
+            <ul id="ul">
+                <li>elemend 1</li>
+                <li>elemend 2</li>
+                <li>elemend 3</li>
+            </ul>
+            </article>
+            <p id="Lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        </section>
+    </main>
+<footer>Autor: 000111222333</footer>
+
+</body>
+</html>

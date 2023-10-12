@@ -1,0 +1,5 @@
+1. Utwórz zapytanie wypisujące rok, miesiąc, zwracające informację ile książek zostało wypożyczonych, w podziale na lata i miesiące.
+2. Wypisz Id książek które były wypożyczane, ale aktualnie nie znajdują się w tabeli książki
+3. Wypisz tytuł książki, autora ( imię i nazwisko) oraz wydawnictwo, jakie wydało książkę
+4. Wypisz ile różnych książek wypożyczył każdy z czytelników
+5. Wypisz czytelników (imię i nazwisko), które przeczytali przynajmniej jedną książkę w ciągu miesiąca
