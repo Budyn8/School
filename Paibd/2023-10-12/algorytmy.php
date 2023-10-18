@@ -93,26 +93,30 @@ function sort_table($tablica) : array {
   $indexPrawy = 0;
   $dlugoscLewejTablicy = count($posortowanaLewaTablica);  
   $dlugoscPrawejTablicy = count($posortowanaPrawaTablica);
+  $indexTablicy = 0;
   while(1){
     
     if($posortowanaLewaTablica[$indexLewy] < $posortowanaPrawaTablica[$indexPrawy]) {
-      $tablica[] = $posortowanaLewaTablica[$indexLewy];
+      $tablica[$indexTablicy] = $posortowanaLewaTablica[$indexLewy];
       $indexLewy++;
     }else{ 
-      $tablica[] = $posortowanaPrawaTablica[$indexPrawy];
+      $tablica[$indexTablicy] = $posortowanaPrawaTablica[$indexPrawy];
       $indexPrawy++;
     }
+$indexTablicy++;
 
     if($indexLewy == $dlugoscLewejTablicy){
       for($i = $indexPrawy; $i < $dlugoscPrawejTablicy; $i++){
-        $tablica[] = $posortowanaPrawaTablica[$i];
+        $tablica[$indexTablicy] = $posortowanaPrawaTablica[$i];
+        $indexTablicy++;
       }
       break;
     }
 
     if($indexPrawy == $dlugoscPrawejTablicy){
       for($i = $indexLewy; $i < $dlugoscLewejTablicy; $i++){
-        $tablica[] = $posortowanaLewaTablica[$i];
+        $tablica[$indexTablicy] = $posortowanaLewaTablica[$i];
+        $indexTablicy++;
       }
       break;
     }
