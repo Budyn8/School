@@ -95,7 +95,7 @@ function sort_table($tablica) : array {
   $dlugoscPrawejTablicy = count($posortowanaPrawaTablica);
   while(1){
     
-    if($posortowanaLewaTablica[$indexLewy] > $posortowanaPrawaTablica[$indexPrawy]) {
+    if($posortowanaLewaTablica[$indexLewy] < $posortowanaPrawaTablica[$indexPrawy]) {
       $tablica[] = $posortowanaLewaTablica[$indexLewy];
       $indexLewy++;
     }else{ 
