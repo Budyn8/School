@@ -20,9 +20,10 @@
     }
     main{
       width: 30%;
-      height: 200px;
+      height: 300px;
       box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 10px;
+      overflow: scroll;
     }
     section{
       margin: 10px;
@@ -52,8 +53,73 @@
   </form>
   <?php
 
-function sort($i, $j, $tablica) : array {
+function sort_table($tablica) : array {
+
+  $dlugoscTablicy = count($tablica);
+
+  if($dlugoscTablicy == 1){
+    return $tablica;
+  }
+
+  $polowaTablicy = ($dlugoscTablicy%2 == 0) ? $dlugoscTablicy/2 : ($dlugoscTablicy - 1)/2;
+
+  $lewaTablica = array();
+  $prawaTablica = array();
+
+  for($i = 0; $i < $polowaTablicy; $i++){
+    $lewaTablica[] = $tablica[$i];
+  }
+
+  for($i = $polowaTablicy; $i < $dlugoscTablicy; $i++){
+    $prawaTablica[] = $tablica[$i];
+  }
+
   
+  $posortowanaLewaTablica= array_merge(sort_table($lewaTablica)); 
+  $posortowanaPrawaTablica = array_merge(sort_table($prawaTablica));
+
+  echo "tablica-L[";
+  foreach ($posortowanaLewaTablica as $value) {
+    echo $value;
+  }
+
+  echo "]&emsp;tablica-R[";
+  foreach ($posortowanaPrawaTablica as $value) {
+    echo $value;
+  }
+  echo "]<hr>";
+
+  $indexLewy = 0;
+  $indexPrawy = 0;
+  $dlugoscLewejTablicy = count($posortowanaLewaTablica);  
+  $dlugoscPrawejTablicy = count($posortowanaPrawaTablica);
+  while(1){
+    
+    if($posortowanaLewaTablica[$indexLewy] > $posortowanaPrawaTablica[$indexPrawy]) {
+      $tablica[] = $posortowanaLewaTablica[$indexLewy];
+      $indexLewy++;
+    }else{ 
+      $tablica[] = $posortowanaPrawaTablica[$indexPrawy];
+      $indexPrawy++;
+    }
+
+    if($indexLewy == $dlugoscLewejTablicy){
+      for($i = $indexPrawy; $i < $dlugoscPrawejTablicy; $i++){
+        $tablica[] = $posortowanaPrawaTablica[$i];
+      }
+      break;
+    }
+
+    if($indexPrawy == $dlugoscPrawejTablicy){
+      for($i = $indexLewy; $i < $dlugoscLewejTablicy; $i++){
+        $tablica[] = $posortowanaLewaTablica[$i];
+      }
+      break;
+    }
+  }
+
+  return $tablica;
+
 }
 
 if(isset($_POST['p_tablica'])){
@@ -69,17 +135,17 @@ if(isset($_POST['p_tablica'])){
     switch ($opt) {
       case 1:
 
-        $len_tb = count($tablica) - 1;
+        $dlugoscTablicy = count($tablica) - 1;
 
-        for($i = 0; $i < $len_tb; $i++){
+        for($i = 0; $i < $dlugoscTablicy; $i++){
 
-          for($j = 0; $j < $len_tb - $i; $j++){
+          for($j = 0; $j < $dlugoscTablicy - $i; $j++){
 
             if($tablica[$j] > $tablica[$j + 1]){
 
-              $licz_pami = $tablica[$j];
+              $liczbaWPamieci = $tablica[$j];
               $tablica[$j] = $tablica[$j + 1];
-              $tablica[$j + 1] = $licz_pami;
+              $tablica[$j + 1] = $liczbaWPamieci;
             }
           }
         }
@@ -88,13 +154,7 @@ if(isset($_POST['p_tablica'])){
       
       case 2:
 
-        $len_tb = count($tablica);
-        $piwot;
-        if($len_tb%2 = 1){
-          $piwot = $tablica[($len_tb - 1) /2];
-        }else{
-          $piwot = $tablica[$len_tb/2];
-        }
+        $tablica = sort_table($tablica);
 
         break;
 
