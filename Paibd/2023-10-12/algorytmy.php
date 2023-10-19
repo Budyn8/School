@@ -4,35 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <style>
-    main, body, html{
-     width: 100%; 
-     overflow: hidden;
-    }
-    body, main{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    body{
-      height: 100vh;
-    }
-    main{
-      width: 30%;
-      height: 300px;
-      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      border-radius: 10px;
-      overflow: scroll;
-    }
-    section{
-      margin: 10px;
-    }
-    input{
-      width: 100%;
-    }
-  </style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -40,8 +12,7 @@
   <form action="#" method="post">
     <section>
       <label for="p_tablica">Wpisz listę: </label>
-      <input type="text" name="p_tablica" id="tablica"><br>
-
+      <input type="text" name="p_tablica" id="tablica">
     </section>
     
     <section>
@@ -51,12 +22,10 @@
         <option value="2">Merge sort</option>
         <option value="3">Better merge sort</option>
       </select>
-    <section>
-    <section>
-      <center><input type="submit" value="Posortuj"></center>
+      <input type="submit" value="Posortuj">
     </section>
-  </form>
-  <?php
+</form>
+<?php
 
 function sort_table($tablica) : array {
 
@@ -228,18 +197,16 @@ if(isset($_POST['p_tablica'])){
         break;
     }
 ?>
-<center><table><tr>
+<article>
 <?php
-
     foreach($tablica as $value){
-
-      echo '<td>'.$value.'</td>';
-
+      echo $value.",";
     }
   }
 }
 ?>
-</tr></table><center></main>
+</article>
+</main>
 
 
 </body>
