@@ -39,11 +39,10 @@
       <article id="wizytowka">
         <?php
 
-        $login = $_POST['login'];
-        $haslo = $_POST['haslo'];
+        if ($_POST['login'] != null && $_POST['haslo'] != null){
 
-        if ($login != '' && $haslo != ''){
-
+          $login = $_POST['login'];
+          $haslo = $_POST['haslo'];
           $login_istnieje = false;
           $zapytanie = "SELECT login FROM uzytkownicy WHERE 1";
           $query = mysqli_query( $conn, $zapytanie );

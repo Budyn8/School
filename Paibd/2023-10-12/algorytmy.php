@@ -28,6 +28,9 @@
     section{
       margin: 10px;
     }
+    input{
+      width: 100%;
+    }
   </style>
 
 </head>
@@ -38,6 +41,7 @@
     <section>
       <label for="p_tablica">Wpisz listę: </label>
       <input type="text" name="p_tablica" id="tablica"><br>
+
     </section>
     
     <section>
@@ -78,17 +82,6 @@ function sort_table($tablica) : array {
   $posortowanaLewaTablica= array_merge(sort_table($lewaTablica)); 
   $posortowanaPrawaTablica = array_merge(sort_table($prawaTablica));
 
-  echo "tablica-L[";
-  foreach ($posortowanaLewaTablica as $value) {
-    echo $value;
-  }
-
-  echo "]&emsp;tablica-R[";
-  foreach ($posortowanaPrawaTablica as $value) {
-    echo $value;
-  }
-  echo "]<hr>";
-
   $indexLewy = 0;
   $indexPrawy = 0;
   $dlugoscLewejTablicy = count($posortowanaLewaTablica);  
@@ -121,9 +114,7 @@ $indexTablicy++;
       break;
     }
   }
-
   return $tablica;
-
 }
 
 if(isset($_POST['p_tablica'])){
@@ -142,7 +133,6 @@ if(isset($_POST['p_tablica'])){
         $dlugoscTablicy = count($tablica) - 1;
 
         for($i = 0; $i < $dlugoscTablicy; $i++){
-
           for($j = 0; $j < $dlugoscTablicy - $i; $j++){
 
             if($tablica[$j] > $tablica[$j + 1]){
