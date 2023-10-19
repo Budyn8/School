@@ -49,6 +49,7 @@
       <select name="opt" id="opt">
         <option value="1" default>Bubble sort</option>
         <option value="2">Merge sort</option>
+        <option value="3">Better merge sort</option>
       </select>
     <section>
     <section>
@@ -96,7 +97,7 @@ function sort_table($tablica) : array {
       $tablica[$indexTablicy] = $posortowanaPrawaTablica[$indexPrawy];
       $indexPrawy++;
     }
-$indexTablicy++;
+    $indexTablicy++;
 
     if($indexLewy == $dlugoscLewejTablicy){
       for($i = $indexPrawy; $i < $dlugoscPrawejTablicy; $i++){
@@ -117,6 +118,67 @@ $indexTablicy++;
   return $tablica;
 }
 
+function better_merge_sort(&$tablica){
+
+  $dlugoscTablicy = count($tablica);
+  if($dlugoscTablicy == 1){
+    return 1;
+  }
+  $polowaTablicy = ($dlugoscTablicy%2 == 0) ? $dlugoscTablicy/2 : ($dlugoscTablicy - 1)/2;
+
+  $lewaTablica = array();
+  $prawaTablica = array();
+
+  for($i = 0; $i < $polowaTablicy; $i++){
+    $lewaTablica[] = $tablica[$i];
+  }
+
+  for($i = $polowaTablicy; $i < $dlugoscTablicy; $i++){
+    $prawaTablica[] = $tablica[$i];
+  }
+
+  better_merge_sort($lewaTablica);
+  better_merge_sort($prawaTablica);
+  
+  $indexLewy = 0;
+  $indexPrawy = 0;
+  $indexTablicy = 0;
+  
+  $dlugoscLewejTablicy = count($lewaTablica);
+  $dlugoscPrawejTablicy = count($prawaTablica);
+
+  $p = 0;
+
+  while(1){
+
+    if($lewaTablica[$indexLewy] < $prawaTablica[$indexPrawy]){
+      $tablica[$indexTablicy++] = $lewaTablica[$indexLewy++]; 
+    }else{
+      $tablica[$indexTablicy++] = $prawaTablica[$indexPrawy++];
+    }
+
+    if($p > 2){
+      break;
+    }
+    $p ++;
+
+    if($indexLewy >= $dlugoscLewejTablicy){
+      for($i = $indexPrawy; $i < $dlugoscPrawejTablicy; $i++){
+        $tablica[$indexTablicy++] = $prawaTablica[$i];
+      }
+      break;
+    }
+
+    if($indexPrawy >= $dlugoscPrawejTablicy){
+      for($i = $indexLewy; $i < $dlugoscLewejTablicy; $i++){
+        $tablica[$indexTablicy++] = $lewaTablica[$i];
+      }
+      break;
+    }
+
+  }
+}
+
 if(isset($_POST['p_tablica'])){
 
   $tablica = $_POST['p_tablica'];
@@ -133,14 +195,18 @@ if(isset($_POST['p_tablica'])){
         $dlugoscTablicy = count($tablica) - 1;
 
         for($i = 0; $i < $dlugoscTablicy; $i++){
+          $p = 0;
           for($j = 0; $j < $dlugoscTablicy - $i; $j++){
-
             if($tablica[$j] > $tablica[$j + 1]){
 
               $liczbaWPamieci = $tablica[$j];
               $tablica[$j] = $tablica[$j + 1];
               $tablica[$j + 1] = $liczbaWPamieci;
+              $p++;
             }
+          }
+          if($p == 0) {
+            break;
           }
         }
 
@@ -150,6 +216,11 @@ if(isset($_POST['p_tablica'])){
 
         $tablica = sort_table($tablica);
 
+        break;
+      
+      case 3:
+
+        better_merge_sort($tablica);
         break;
 
       default:
