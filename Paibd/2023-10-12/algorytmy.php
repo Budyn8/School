@@ -12,7 +12,7 @@
   <form action="#" method="post">
     <section>
       <label for="p_tablica">Wpisz listę: </label>
-      <input type="text" name="p_tablica" id="tablica">
+      <input type="text" name="p_tablica" id="tablica" maxlenght="59">
     </section>
     
     <section>
@@ -199,8 +199,9 @@ if(isset($_POST['p_tablica'])){
 ?>
 <article>
 <?php
+    echo "0";
     foreach($tablica as $value){
-      echo $value.",";
+      echo ", ".$value;
     }
   }
 }

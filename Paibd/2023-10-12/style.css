@@ -1,7 +1,7 @@
 main, body, html{
   width: 100%; 
   overflow: hidden;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: monospace;
   font-size: 25px;
 }
 
@@ -9,7 +9,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, rgb(0, 16, 60) 0%, rgb(40, 170, 230) 100%);
+  background: linear-gradient(45deg, rgb(0, 16, 60) 0%, rgb(60, 100, 150) 100%);
   background-size: 400%;
   background-position: 0 0;
   animation: animatedBg 5s ease-in-out infinite alternate;
@@ -24,12 +24,11 @@ body{
   }
 }
 main{
-  background-color: rgb(24, 101, 189);
+  background-color: rgb(23, 92, 172);
   width: 30%;
   height: 300px;
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
-  overflow: scroll;
 }
 form {
   width: 100%;
@@ -51,24 +50,34 @@ input[type="text"]{
   width: 90%;
   height: 20px;
   border: 1px solid rgb(0, 16, 60);
+  border-radius: 10px;
 }
 input[type="submit"], select{
-  background-color: rgb(22, 93, 185);
-  box-shadow: 0 4px 8px 0 rgba(255, 254, 254, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  background-color: rgb(24, 76, 145);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   border: 0;
+  font-size: 20px;
   width: 200px;
   height: 40px;
   margin: 5px;
 }
 input[type="submit"]:hover{
-  border: 5px solid green;
+  border: 2px solid rgb(52, 97, 219);
+}
+option{
+  border-radius: 5px;
+  background-color: rgb(24, 76, 145);
+}
+option:hover{
+  background-color: rgb(0, 16, 60);
 }
 article {
   height: 20%;
   text-align: center;
   width: calc(100% - 20px);
   margin: 0px 10px;
+  font-size: 15px;
   overflow-wrap: break-word;
 }
 
