@@ -84,7 +84,7 @@
           .':00"><br><br>';
       }
       ?>
-      <input type="submit" value="Zarezerwuj"><div style="color: red; height: 9px; font-size: 9px;">
+      <input type="submit" value="Zarezerwuj"><div style="color: red; height: 1px; font-size: 9px;">
       <?php 
       
       if(isset($_POST['zabieg']) && isset($_POST['data']) && isset($_POST['godzina'])){
@@ -93,6 +93,7 @@
           $zabieg_id = $_POST['zabieg'];
           $data = $_POST['data'];
           $godzina = $_POST['godzina'];
+          $wypisz = '';
 
 
           $query = "SELECT id, grafik.Status FROM grafik WHERE grafik.Data = '".$data."' &&  grafik.Godzina = '". $godzina."'";
@@ -100,30 +101,28 @@
 
           $tabela = mysqli_fetch_array($rezultat);
 
-          if ( $tabela == null){
-            die('Nie ma takiego terminu');
-          }
+          if ( $tabela == null) echo 'Nie ma takiego terminu';
+          else {
+            $grafik_id = $tabela['id'];
+            $grafik_status =  $tabela['Status'];
 
-          $grafik_id = $tabela['id'];
-          $grafik_status =  $tabela['Status'];
-
-          if( $grafik_status == 'Z' ){
-            die('Termin już jest zajęty');
-          }
-         
-          $query = "INSERT INTO rezerwacja (Id_zabieg, Id_grafik, Komentarz) VALUES ($zabieg_id, $grafik_id, '')";
-          $rezultat = mysqli_query($conn, $query);
-
-          if (!$rezultat){ die('Nie udało się zarezerwować terminu'); } 
+            if( $grafik_status == 'Z' ) echo 'Termin już jest zajęty';
+            else {
           
-          $query = "UPDATE grafik SET `Status` = 'Z' WHERE id = $grafik_id";
-          $rezultat = mysqli_query($conn, $query);
+              $query = "INSERT INTO rezerwacja (Id_zabieg, Id_grafik, Komentarz) VALUES ($zabieg_id, $grafik_id, '')";
+              $rezultat = mysqli_query($conn, $query);
 
-          if (!$rezultat) { die('Nie udało się zapisać rezerwacji'); }
+              if (!$rezultat){ echo 'Nie udało się zarezerwować terminu';} 
+              
+              $query = "UPDATE grafik SET `Status` = 'Z' WHERE id = $grafik_id";
+              $rezultat = mysqli_query($conn, $query);
 
+              if (!$rezultat) { echo 'Nie udało się zapisać rezerwacji';}
+            }
+          }
         }
       } 
-
+      mysqli_close($conn)
       ?>
       </div>
     </form>
