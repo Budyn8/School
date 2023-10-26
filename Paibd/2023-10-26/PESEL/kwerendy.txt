@@ -1,0 +1,4 @@
+Zapytanie 1: SELECT id, Nazwa, Opis, Cena FROM zabiegi WHERE 1;
+Zapytanie 2: CREATE USER `salon`@`%`;
+Zapytanie 3: UPDATE grafik SET `Status`  = `Z` WHERE `grafik`.`Id` = 15;
+Zapytanie 4: INSERT INTO rezerwacja (Id_zabieg, Id_grafik) VALUES (1, 15);

@@ -11,7 +11,7 @@ def creating_folder():
         return 'Plik już istnieje'
 
     os.mkdir(path)
-    return 'Plik został stworzony'
+    return 'Folder został stworzony'
 
 
 if __name__ == '__main__':

@@ -1,0 +1,68 @@
+html {
+  font-family: Verdana;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: rgb(230, 220, 240);
+  color: darkmagenta;
+}
+
+h1 {
+  margin: 0;
+}
+
+header {
+  height: 150px;
+  font-size: 300%;
+  text-align: center;
+}
+
+main {
+  background-color: white;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+main > img {
+  width: 220px;
+  margin: 5px;
+}
+
+#lewy {
+  background-color: rgb(230, 210, 240);
+  width: calc(50% - 40px);
+  height: calc(450px - 40px);
+  float: left;
+  padding: 20px;
+}
+
+#prawy {
+  background-color: rgb(230, 200, 240);
+  width: calc(50% - 40px);
+  height: calc(450px - 40px);
+  float: left;
+  padding: 20px;
+}
+
+footer {
+  clear: both;
+  text-align: right;
+  height: 50px;
+}
+
+p {
+  position: relative;
+  top: 15px;
+  right: 15px;
+}
+
+img:hover {
+  background-color: rgb(243, 188, 238);
+}
