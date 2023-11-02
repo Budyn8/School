@@ -1,0 +1,8 @@
+Skrypt main.js
+Wymagania dotyczące skryptu:
+•	Wykonywany po stronie przeglądarki, wywoływany przez zdarzenie kliknięcia w dowolny przycisk
+•	Skrypt ma za zadanie zmienić styl CSS dla paragrafu o treści „To jest przykład paragrafu, który…” znajdującego się w panelu głównym
+•	Po wciśnięciu czerwonego przycisku, zmieniany jest kolor tekstu paragrafu na czerwony. Po wciśnięciu zielonego przycisku – na zielony. Po wciśnięciu niebieskiego przycisku – na niebieski
+•	Ponadto wciśnięcie dowolnego przycisku powoduje
+•	Pobranie wartości z pola edycyjnego i ustawienie rozmiaru czcionki paragrafu pobraną wartością wyrażoną w procentach. Na przykład, jeżeli wpisano wartość 150 – rozmiar czcionki powinien być ustawiony na „150%”
+•	Pobranie wyboru z listy i ustawienie czcionki paragrafu na pochyłą lub wyprostowaną
