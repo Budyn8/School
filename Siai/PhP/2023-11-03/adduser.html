@@ -12,6 +12,20 @@
     }
   </style>
   <script>
+    const validateForename = ( field ) => {
+      return ( field == "" ) ? "Nie wpisano imienia .\n" : ""
+    } 
+    const validateSurname = ( field ) => {
+      return ( field == "" ) ? "Nie wpisano nazwiska .\n" : ""
+    }
+    const validateUsername = ( field ) => {
+      if ( field == "" ) return "Nie wpisano nazwy użytkownika .\n"
+      else if ( field.length < 5 )
+        return "Nazwa użytkownika musi się składać z co najmniej 5 znaków .\n"
+      else if ( /[^a-zA-Z0-9_-]/.test(field))
+        return "Tylko znaki a-z, A-Z, -9, - oraz _ dopuszcza się w nazwia użytkownika .\n"
+      return ""
+    }
     const validate = ( form ) => {
       fail = validateForename(form.formname.value)
       fail += validateSurname(form.surname.value)
