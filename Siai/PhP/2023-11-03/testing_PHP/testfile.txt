@@ -1,0 +1,5 @@
+
+Testowanie Tworzenia plików
+w pliku .txt
+
+Plik txt

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .signup{
+      border: 1px solid #999999;
+      font: normal 14px helvetica;
+      color: #444444;
+    }
+  </style>
+  <script>
+    const validate = ( form ) => {
+      fail = validateForename(form.formname.value)
+      fail += validateSurname(form.surname.value)
+      fail += validateUsername(form.username.value)
+      fail += validatePassword(form.password.value)
+      fail += validateAge(form.age.value)
+      fail += validateEmail(form.email.value)
+
+      if (fail == "") return true
+      else { alert(fail); return false }
+    }
+  </script>
+</head>
+<body>
+  <table class="signup" border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
+    <th colspan="2" align="center">Formularz rejestracyjny</th>
+    <form method="post" action="adduser.php" onsubmit="return validate(this)">
+      <tr>
+        <td>Imię</td>
+        <td><input type="text" maxlength="32" name="forename"></td>
+      </tr>
+      <tr>
+        <td>Nazwisko</td>
+        <td><input type="text" maxlength="32" name="surname"></td>
+      </tr>
+      <tr>
+        <td>Nazwa użytkownika</td>
+        <td><input type="text" maxlength="32" name="username"></td>
+      </tr>
+      <tr>
+        <td>Hasło</td>
+        <td><input type="text" maxlength="32" name="password"></td>
+      </tr>
+      <tr>
+        <td>Wiek</td>
+        <td><input type="text" maxlength="32" name="wiek"></td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td><input type="text" maxlength="32" name="email"></td>
+      </tr>
+      <tr>
+        <td colspan="2" align-items="center"><input type="submit" value="Zarejestruj się"></td>
+      </tr>
+    </form>
+  </table>
+</body>
+</html>
