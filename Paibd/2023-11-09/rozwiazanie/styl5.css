@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	font-family: Verdana;
 }
-#dropdown {
+.dropdown {
 	position: relative;
 	background: Sienna;
 	display: flex;
@@ -16,12 +16,7 @@ body {
 	float: left;
 } 
 
-a {
-	text-decoration: none;
-	color: black;
-}
-
-#ondrop{
+.ondrop{
 	height: auto;
 	width: 150px;
 	margin-top: 50px;
@@ -45,12 +40,13 @@ a {
 	background-color: burlywood;
 }
 
-.list:hover {
+.list:hover, .ondrop:hover + .list {
 	height: auto;
 }
 
-#ondrop:hover + .list {
-	height: auto;
+a {
+	text-decoration: none;
+	color: black;
 }
 
 #tytulowy {
@@ -60,6 +56,7 @@ a {
 	width: 80%;
 	float: left;
 }
+
 #lewy {
 	background: BurlyWood;
 	height: 700px;
@@ -79,23 +76,27 @@ a {
 	/* justify-content: center; space-around */
 	/* justify-items: baseline; */
 }
+
 #prawy {
 	background: BurlyWood;
 	height: 700px;
 	width: 30%;
 	float: left;
 }
+
 #stopka {
 	background: Sienna;
 	color: orange;
 	text-align: center;
 	clear: both;
 }
-#lewy > img {
+
+img {
 	margin: 7px;
 	padding: 5px;
 	border: 1px solid RosyBrown;
 }
+
 img:hover {
 	border-color: Maroon;
 }

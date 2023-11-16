@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="styl5.css" />
 </head>
 <body>
-	<div id="dropdown">
-		<div id="ondrop"><a href="#" class="dropper">Uczeń</a></div>
+	<div class="dropdown">
+		<div class="ondrop"><a href="#" class="dropper">Uczeń</a></div>
 		<ul class="list">
 				<li class="list-element"><a href="https://narwik.edu.pl/konkursy/" class="element-link">Konkursy</a></li>
 				<li class="list-element"><a href="https://portal.librus.pl/rodzina/synergia/loguj" class="element-link">Dziennik</a></li>
