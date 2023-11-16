@@ -3,12 +3,56 @@ body {
 	margin: 0;
 	font-family: Verdana;
 }
-#miniatura {
+#dropdown {
+	position: relative;
 	background: Sienna;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
 	height: 100px;
 	width: 20%;
 	float: left;
+} 
+
+a {
+	text-decoration: none;
+	color: black;
 }
+
+#ondrop{
+	height: auto;
+	width: 150px;
+	margin-top: 50px;
+	background-color: brown;
+} 
+
+.list {
+  width: 150px;
+	height: 0; 
+	padding: 0;
+	margin: 0;
+}
+
+.list-element {
+	background-color: brown;
+	height: inherit;
+	overflow: hidden;
+}
+
+.list-element:hover {
+	background-color: burlywood;
+}
+
+.list:hover {
+	height: auto;
+}
+
+#ondrop:hover + .list {
+	height: auto;
+}
+
 #tytulowy {
 	background: Sienna;
 	color: orange;
@@ -21,23 +65,25 @@ body {
 	height: 700px;
 	width: 70%;
 	float: left;
+	/* css using flex */
 	display: flex;
+	align-content: center;
+	align-items: baseline;
+	flex-wrap: wrap;
 	justify-content: center;
+	/* css using grid */
+	/* display: grid; */
+	/* grid-template-columns: repeat(auto-fill, 300px); repeat(4, 1fr) */
+	/* align-content: center;	space-around */
+	/* align-items: baseline; */
+	/* justify-content: center; space-around */
+	/* justify-items: baseline; */
 }
 #prawy {
 	background: BurlyWood;
 	height: 700px;
 	width: 30%;
 	float: left;
-	text-align: center;
-	display: flex;
-	align-items: center;
-}
-#prawy > #content{
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
 }
 #stopka {
 	background: Sienna;
@@ -45,15 +91,11 @@ body {
 	text-align: center;
 	clear: both;
 }
-img {
+#lewy > img {
 	margin: 7px;
 	padding: 5px;
 	border: 1px solid RosyBrown;
 }
 img:hover {
 	border-color: Maroon;
-}
-h1{
-	width: 100%;
-	text-align: center;
 }

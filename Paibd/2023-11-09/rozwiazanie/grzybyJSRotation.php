@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-	<link rel="stylesheet" href="./styl5.css" />
+	<link rel="stylesheet" href="./styl5Rotation.css" />
   <?php
 	$con = mysqli_connect('localhost', 'root', '', 'dane2');
 	$query = "SELECT potoczna, nazwa_pliku, opis FROM grzyby WHERE 1";
@@ -67,8 +67,5 @@
 	<div id="stopka">
 		<p>Autor: PESEL</p>
 	</div>
-
-
-  
 </body>
 </html>

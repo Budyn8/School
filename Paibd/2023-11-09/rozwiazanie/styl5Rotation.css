@@ -1,0 +1,59 @@
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Verdana;
+}
+#miniatura {
+	background: Sienna;
+	height: 100px;
+	width: 20%;
+	float: left;
+}
+#tytulowy {
+	background: Sienna;
+	color: orange;
+	height: 100px;
+	width: 80%;
+	float: left;
+}
+#lewy {
+	background: BurlyWood;
+	height: 700px;
+	width: 70%;
+	float: left;
+	display: flex;
+	justify-content: center;
+}
+#prawy {
+	background: BurlyWood;
+	height: 700px;
+	width: 30%;
+	float: left;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+#prawy > #content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+#stopka {
+	background: Sienna;
+	color: orange;
+	text-align: center;
+	clear: both;
+}
+img {
+	margin: 7px;
+	padding: 5px;
+	border: 1px solid RosyBrown;
+}
+img:hover {
+	border-color: Maroon;
+}
+h1{
+	width: 100%;
+	text-align: center;
+}
