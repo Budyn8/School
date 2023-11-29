@@ -7,8 +7,8 @@ def losowanie(tabela):
   for val in tabela:
     wynik[val] = 0
 
-  for i = 0, i < 10, i++:
-    wynik[choice(tabela)] += 1
+  for i in range(0, 10):
+    wynik[random.choice(tabela)] += 1
 
   print(wynik) 
   
