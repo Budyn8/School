@@ -19,18 +19,24 @@ echo "<!DOCTYPE html>\n<html><head><meta charset='utf-8'><title>Przykładowy for
 
 if ($fail == "")
 {
-  echo "</head><body>Dane formularza pomyślnie zweryfikowane:
-    $forename, $surname, $username, $password, $age, $email.</body></html>";
+  echo "</head><body>Dane formularza pomyślnie zweryfikowane:<br>
+      &emsp;- forename: $forename<br>
+      &emsp;- surname: $surname<br>
+      &emsp;- username: $username<br>
+      &emsp;- password: $password<br>
+      &emsp;- age: $age<br>
+      &emsp;- email: $email
+    </body></html>";
 
   exit;
 }
 echo <<<_END
 <!-- Sekcja HTML/JavaScript -->
 <style>
-.signup {
-border: 1px solid #999999;
-font: normal 14px helvetica; color:#444444;
-}
+  .signup {
+    border: 1px solid #999999;
+    font: normal 14px helvetica; color:#444444;
+  }
 </style>
 <script>
   function validate(form){
@@ -40,7 +46,7 @@ font: normal 14px helvetica; color:#444444;
     fail += validatePassword(form.password.value)
     fail += validateAge(form.age.value)
     fail += validateEmail(form.email.value)
-    if (fail == "") return true
+    if (fail == "") {return true}
     else { alert(fail); return false }
   }
   function validateForename(field){ return (field == "") ? "Nie wpisano imienia.\\n" : "" }
@@ -80,19 +86,19 @@ font: normal 14px helvetica; color:#444444;
     <form method="post" action="adduser.php" onsubmit="return validate(this)">
       <tr>
         <td>Imię</td>
-        <td><input type="text" maxlength="32" name="$forename" value="forename"></td>
+        <td><input type="text" maxlength="32" name="forename" value="$forename"></td>
       </tr>
       <tr>
         <td>Nazwisko</td>
-        <td><input type="text" maxlength="32" name="$surname" value="surname"></td>
+        <td><input type="text" maxlength="32" name="surname" value="$surname"></td>
         </tr>
       <tr>
         <td>Nazwa użytkownika</td>
-        <td><input type="text" maxlength="16" name="$username" value="username"></td>
+        <td><input type="text" maxlength="16" name="username" value="$username"></td>
       </tr>
       <tr>
         <td>Hasło</td>
-        <td><input type="text" maxlength="12" name="$password" value="password"></td>
+        <td><input type="text" maxlength="12" name="password" value="$password"></td>
       </tr>
       <tr>
         <td>Wiek</td>
@@ -141,7 +147,6 @@ function validate_email($field){
   return "";
 }
 function fix_string($string){
-  if (get_magic_quotes_gpc()) $string = stripslashes($string);
   return htmlentities($string);
 }
 ?>
