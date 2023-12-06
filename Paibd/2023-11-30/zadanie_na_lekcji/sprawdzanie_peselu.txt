@@ -1,0 +1,16 @@
+ALGORYTM WYLICZANIA SUMY KONTROLNEJ PESEL:
+PESEL składa się z 11 cyfr.
+Ostatnia 11 cyfra jest sumą kontrolną obliczaną według algorytmu.
+Krok 1
+Policz sumę iloczynów poszczególnych cyfr i odpowiadających im wag wg wzoru:
+S = 1*cyfra1 + 3*cyfra2 + 7*cyfra3 + 9*cyfra4 + 1*cyfra5 + 3*cyfra6 + 7*cyfra7 + 9*cyfra8 1*cyfra9 + 3*cyfra10
+Krok 2
+Oblicz resztę z dzielenia przez 10 z otrzymanej sumy S (operacja modulo) M = S%10
+Krok 3
+Przypadek 1
+
+Jeśli liczba M równa jest 0 to suma kontrolna (11 cyfra PESEL) równa jest 0
+Przypadek 2
+Jeśli liczba M jest różna od 0 to suma kontrolna jest wynikiem odejmowania 10 – M
+Przykład 1 dla PESEL 00101843690 S= 1*0 + 3*0 + 7*1 + 9*0 + 1*1 + 3*8+ 7*4 + 9*3 + 1*6 + 3*9 = = 0 + 0 + 7 + 0 + 1 + 24 + 28 + 27 + 6 + 27= 120 M =120%10 = 0 (M równa 0 więc przypadek 1) 11 cyfra PESEL = 0
+Przykład 2 dla PESEL 04061656044 S = 1*0 + 3*4 + 7*0 + 9*6 + 1*1 + 3*6 + 7*5 + 9*6 + 1*0 + 3*4 = = 0 + 12 + 0 + 54 + 1 + 18 + 35 + 54 + 0 + 12= 186 M =186%10 = 6 (M różne od 0 więc przypadek 2) 11 cyfra PESEL = 10 - M= 10 - 6 = 4
