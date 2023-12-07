@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wyliczanie Pola i Obwodu Kwadratu</title>
+  <script>
+    function oblicz( dzialanie ){
+      let odpElem = document.querySelector('#odpowiedz');
+      let bokValue = parseInt(document.querySelector('input[type="number"]').value);
+
+      if(  isNaN(bokValue) || bokValue < 0 ){
+        odpElem.innerHTML = "Należy wpisać dodatnią wartość liczbową";
+      }else if( dzialanie === 'pole' ){
+        odpElem.innerHTML = `P = a<sup>2</sup> = ${bokValue * bokValue}`;
+      }else if( dzialanie === 'obwod' ){
+        odpElem.innerHTML = `Obw = 4a = ${bokValue * 4}`;
+      }
+    }
+  </script>
+</head>
+<body>
+    <header><h1>KWADRAT</h1></header>
+    <label for="dlBoku"><i>Podaj długość boku:</i></label><input type="number" name="dlBoku" id="dlBoku">
+    <br><br>
+    <input type="button" value="licz pole" onclick="oblicz('pole')">
+    <input type="button" value="licz obwód" onclick="oblicz('obwod')">
+    <br><br>
+    <i id="odpowiedz"></i>
+</body>
+</html>
