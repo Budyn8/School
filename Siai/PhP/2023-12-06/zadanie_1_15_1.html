@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    main{
-      width: 350px;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
+  <title>Prosty kalkulator</title>
+  <style> 
+  * {
+    margin: 5px 0;
+  }
   </style>
   <script>
     function wykonajDziała( dzialanie ){
@@ -32,7 +29,27 @@
         return 1;
       }
 
-      elemWiad.innerHTML = "";
+      switch (dzialanie) {
+        case 'dod':
+          elemWiad.innerHTML = `${jeden} + ${dwa} = ${jeden + dwa}`;
+          break;
+
+        case 'ode':
+          elemWiad.innerHTML = `${jeden} - ${dwa} = ${jeden - dwa}`;
+          break;
+
+        case 'mno':
+          elemWiad.innerHTML = `${jeden} * ${dwa} = ${jeden * dwa}`;
+          break;
+
+        case 'dzi':
+          elemWiad.innerHTML = `${jeden} : ${dwa} = ${jeden/dwa}`;
+          break;
+
+        default:
+          elemWiad.innerHTML = "";
+          break;
+      }
     }
   </script>
 </head>
@@ -40,14 +57,16 @@
   <main>
     <header><h1>PROSTE DZIAŁANIA</h1></header>
     <label for="jeden"><i>Podaje pierwszą liczbę</i></label><input type="number" name="jeden" id="jeden">
+    <br>
     <label for="dwa"><i>Podaje drugą liczbę</i></label><input type="number" name="dwa" id="dwa">
-    <i id="wiadomosc"></i>
+    <br>
     <section>
       <input type="button" value="DODAWANIE" onclick="wykonajDziała( 'dod' )">
       <input type="button" value="ODEJMOWANIE" onclick="wykonajDziała( 'ode' )">
       <input type="button" value="MNOŻENIE" onclick="wykonajDziała( 'mno' )">
       <input type="button" value="DZIELENIE" onclick="wykonajDziała( 'dzi' )">
     </section>
+    <i id="wiadomosc"></i>
   </main>
 </body>
 </html>
