@@ -54,7 +54,7 @@
               $s = 1*$pesel[0] + 3*$pesel[1] + 7*$pesel[2] + 9*$pesel[3] + 1*$pesel[4] + 3*$pesel[5] + 7*$pesel[6] + 9*$pesel[7] + 1*$pesel[8] + 3*$pesel[9];
               $m = $s%10;
               if( ($m == 0 && $kontrolna == 0) || ($m > 0 && $kontrolna = 10 - $m) ){
-                $zapytanie = "INSERT INTO pracownicy ( nazwisko, imie, PESEL ) VALUES( '".$nazwisko."', '".$imie."', '".$pesel."')";
+                $zapytanie = "INSERT INTO pracownicy ( nazwisko, imie, PESEL ) VALUES( '$nazwisko', '$imie', '$pesel')";
                 if(mysqli_query( $con, $zapytanie )) echo "pomyślnie dodano do tablicy";
               }else{
                 echo "nie prawidlowy pesel";

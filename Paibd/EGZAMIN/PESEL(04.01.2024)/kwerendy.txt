@@ -1,0 +1,9 @@
+1. SELECT imie, nazwisko, opis, zdjecie FROM `osoby` WHERE Hobby_id = 1 OR Hobby_id = 2 OR Hobby_id = 6;
+2. SELECT o.nazwisko, o.id, h.nazwa FROM `osoby` AS o INNER JOIN `hobby` AS h ON h.id = o.Hobby_id WHERE o.rok_urodzenia > 2000; 
+3. SELECT id, zdjecie FROM `osoby` WHERE imie = "Monika" LIMIT 5; 
+4. CREATE TABLE `dane`.`wpisy` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `wpis` TEXT , 
+    `uzytkownik_id` INT NOT NULL , 
+    PRIMARY KEY (`id`)
+); 
