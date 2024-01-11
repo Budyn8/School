@@ -21,15 +21,26 @@
 
     ?>
   </header>
+  <?php
+  if( !empty($_POST['wpis']) ) {
+    $query = 'UPDATE zadania SET wpis = "'.$_POST['wpis'].'" WHERE dataZadania = "2020-07-13"';
+    $req = mysqli_query($conn, $query);
+  }
+  ?>
   <main>
     <?php
 
     $query = 'SELECT dataZadania, wpis FROM zadania WHERE miesiac = "lipiec"';
     $req = mysqli_query($conn, $query);
     while( $res = mysqli_fetch_row($req) ){
-      echo "<section><h5>{$res[0]}</h5><p>{$res[1]}</p></section>";
+      echo "
+      <section>
+        <h5>{$res[0]}</h5>
+        <p>{$res[1]}</p>
+      </section>";
     };
 
+    mysqli_close($conn);
     ?>
   </main>
   <footer>
@@ -42,13 +53,5 @@
       Stronę wykonał: numer PESEL 
     </p>
   </footer>
-  <?php
-  if( !empty($_POST['wpis']) ) {
-    $query = 'UPDATE zadania SET wpis = "'.$_POST['wpis'].'" WHERE dataZadania = "2020-07-13"';
-    $req = mysqli_query($conn, $query);
-
-    mysqli_close($conn);
-  }
-  ?>
 </body>
 </html>
