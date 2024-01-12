@@ -1,0 +1,56 @@
+body {
+  background-color: #EEEEEE;
+}
+
+section {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+nav, article, footer {
+  background-color: #C0C0C0;
+  height: 100px;
+  padding: 10px 0;
+}
+
+article {
+  width: 400px;
+  float: left;
+}
+
+nav {
+  width: 600px;
+  float: left;
+}
+
+header {
+  background-color: #DDDDDD;
+  height: 200px;
+  clear: both;
+}
+
+main {
+  margin: 50px;
+}
+
+footer {
+  text-align: right;
+}
+
+a {
+  color: #555555;
+  margin: 50px;
+  font-size: 200%;
+  text-decoration: none;
+}
+
+hr {
+  background-color:#C0C0C0;
+  width: 70%;
+  height: 2px;
+}
+
+table {
+  text-align: left;
+}

@@ -8,6 +8,75 @@
   <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-  
-</body>
-</html>
+  <script>
+    const przeslij = () => {
+      let wiadomosc = document.getElementById("wiadomocs");
+      if( !document.getElementById("Zapoznalem").checked ){
+        wiadomosc.innerHTML = "<p style='color:red;'>Musisz zapoznać się z regulaminem</p>";
+        return;
+      }
+
+      let fullName = (document.getElementById("Imie").value + " " + document.getElementById("Nazwisko").value).toUpperCase();
+      let tresc = "Treść Twojej sprawy:" + document.getElementById("Usluga").value;
+
+      wiadomosc.innerHTML = `<p>${fullName}</p><p>${tresc}</p><p>Na podany e-mail zostanie wysłana oferta.</p>`
+    }
+  </script>
+  <section>
+    <article>
+      <img src="logo.png" alt="logo firmy" />
+    </article>
+    <nav>
+      <a href="index.html">O nas</a>
+      <a href="uslugi.html">Usługi</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <header>
+      <img src="animacja.gif" />
+    </header>
+    <main>
+      <hr>
+      <h2>Kontakt</h2>
+      <table>
+          <form>
+          <tr>
+            <td>Imie:</td>
+            <td><input type="text" id="Imie"></td>
+          </tr>
+          <tr>
+            <td>Nazwisko:</td>
+            <td><input type="text" id="Nazwisko"></td>
+          </tr>
+          <tr>
+            <td>E-mail:</td>
+            <td><input type="text" id="E-mail"></td>
+          </tr>
+          <tr>
+            <td>Usługa:</td>
+            <td><textarea name="" id="Usluga" cols="30" rows="10"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" id="Zapoznalem">Zapoznałam/em się z regulaminem
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="reset" value ="Resetuj"><input type="button" value="Prześlij" onclick="przeslij()">  
+            </td>
+          </tr>
+          
+          </form>
+        </table>
+        <div id="wiadomocs"></div>
+        <hr>
+      </main>
+      <footer>
+        Autor strony: <b>PESEL</b>
+    </footer>
+  </section>
+    
+  </body>
+  </html>
