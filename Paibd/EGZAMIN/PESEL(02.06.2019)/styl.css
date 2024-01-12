@@ -1,0 +1,68 @@
+header {
+  background-color: #62AFFF;
+  height: 80px;
+  font-size: 120%;
+  text-align: center;
+}
+
+section {
+  float: left;
+}
+
+#lewy {
+  background-color: #44D6E8;
+  height: 450px;
+  width: 30%;
+  font-size: 120%;
+}
+
+#srodkowy {
+  height: 450px;
+  width: 40%;
+  text-align: center;
+}
+
+#prawy {
+  background-color: #44D6E8;
+  height: 450px;
+  width: 30%;
+  font-size: 120%;
+  text-align: center;
+}
+
+footer {
+  background-color: #62AFFF;
+  height: 50px;
+  text-align: center;
+  clear: both;
+}
+
+table {
+  margin-left: 50px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  border: solid yellow 1px;
+  padding: 20px;
+  text-align: center;
+  font-size: 120%;
+}
+
+td:hover {
+  color: yellow;
+}
+
+img, h3 {
+  margin-top: 100px;
+}
+
+img {
+  float: left;
+  text-align: right;
+}
+
+input[type='number'] {
+  margin-top: 10px;
+}
