@@ -1,0 +1,4 @@
+1. SELECT nazwa, podzespoly.opis, cena FROM podzespoly INNER JOIN typy ON podzespoly.typy_id = typy.id WHERE typy.id = 1; 
+2. SELECT id, nazwa FROM podzespoly WHERE podzespoly.dostepnosc = 1 AND podzespoly.cena < 400; 
+3. SELECT nazwa, kategoria FROM podzespoly INNER JOIN typy ON podzespoly.typy_id = typy.id WHERE typy.kategoria = "Procesor"; 
+4. ALTER TABLE typy ADD opis TEXT; 
