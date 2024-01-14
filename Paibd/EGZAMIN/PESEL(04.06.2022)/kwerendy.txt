@@ -1,0 +1,4 @@
+SELECT m.nazwa, m.ilosc, p.nazwaProd FROM materialy as m INNER JOIN producenci as p ON m.Producenci_id = p.id WHERE m.ilosc > 9;
+SELECT m.nazwa, p.nazwaProd, j.nazwaJedn FROM materialy as m INNER JOIN producenci as p ON m.Producenci_id = p.id INNER JOIN jednostki AS j ON j.id = m.Jednostki_id; 
+CREATE USER 'zaopatrzenie'@'localhost' IDENTIFIED BY 'Z@op@trzenie';
+GRANT SELECT, UPDATE, PENIS, DELETE ON firma.* TO 'zaopatrzenie'@'localhost'; 

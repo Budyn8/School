@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styl4.css">
+  <title>Hurtownia</title>
+</head>
+<body>
+  <aside>
+    <img src="logo.png" alt="hurtownia">
+  </aside>
+  <nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="zamowienia.html">Zamówianie</a>
+    <a href="blog.html">Blog o kawie</a>
+    <a href="http://gatunki-kawy.pl/" target="_blank">Odwiedź także</a>
+  </nav>
+  <header>
+    <h1>Hurtownia kawy</h1>
+  </header>
+  <section id="lewy">
+    <h2>Oferta</h2>
+    <ol>
+      <li>Kawa palona Arabica</li>
+      <li>Kawa palona Robusta</li>
+      <li>Kawa bezkofeinowa</li>
+      <li>Kawa zielona</li>
+    </ol>
+  </section>
+  <section id="prawy">
+    Podaj numer kawy:<br/>
+    <input type="number" id="kawa"><br/>
+    Podaj wagę w dekagramach<br/>
+    <input type="number" id="waga"><br>
+    <input type="button" value="Zamów" id="submit"><br/>
+    <p></p>
+  </section>
+  <footer>
+    Stronę wykonał:numer PESEL
+  </footer>
+
+  <script>
+
+    const submit = document.querySelector("#submit");
+    const cenaKawy = [5, 7, 6];
+
+    const wagaSel = () => parseInt(document.querySelector("#waga").value);
+    const kawaSel = () => parseInt(document.querySelector("#kawa").value);
+
+    const submitHandler = () => {
+      let cena = cenaKawy[kawaSel() - 1] * wagaSel();
+      document.querySelector( "#prawy > p" ).innerHTML =`Koszt zamówienia wynosi: ${cena ? cena : 0} zł`;
+    };
+
+    submit.addEventListener("click", submitHandler);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+* {
+  font-family: Verdana, sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: darkgreen;
+  color: #fff;
+  padding: 5px;
+}
+
+#lewy {
+  background-color: palegreen;
+  width: 30%;
+  height: calc(500px + 100px);
+  float: left;
+}
+
+#prawy {
+  background-color: honeydew;
+  width: 70%;
+  height: 500px;
+  padding-top: 100px;
+  float: left;
+}
+
+footer {
+  background-color: palegreen;
+  padding: 3px;
+  clear: both;
+}
+
+table,
+td {
+  border: 1px solid darkgreen;
+  border-collapse: collapse;
+}
+
+table {
+  margin: auto;
+  width: 95%;
+}
+
+th, td {
+  padding: 20px 0;
+}
+
+input[type="button"] {
+  background-color: darkgreen;
+  color: #fff;
+  padding: 5px;
+}
+
+input[type="button"]:hover {
+  background-color: honeydew;
+  color: darkgreen;
+}

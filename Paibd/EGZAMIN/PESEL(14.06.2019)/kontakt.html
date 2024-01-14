@@ -9,8 +9,11 @@
 </head>
 <body>
   <script>
+   
     const przeslij = () => {
+
       let wiadomosc = document.getElementById("wiadomocs");
+      
       if( !document.getElementById("Zapoznalem").checked ){
         wiadomosc.innerHTML = "<p style='color:red;'>Musisz zapoznać się z regulaminem</p>";
         return;
@@ -22,10 +25,10 @@
       wiadomosc.innerHTML = `<p>${fullName}</p><p>${tresc}</p><p>Na podany e-mail zostanie wysłana oferta.</p>`
     }
   </script>
-  <section>
-    <article>
+  <main>
+    <aside>
       <img src="logo.png" alt="logo firmy" />
-    </article>
+    </aside>
     <nav>
       <a href="index.html">O nas</a>
       <a href="uslugi.html">Usługi</a>
@@ -34,7 +37,7 @@
     <header>
       <img src="animacja.gif" />
     </header>
-    <main>
+    <section>
       <hr>
       <h2>Kontakt</h2>
       <table>
@@ -72,11 +75,11 @@
         </table>
         <div id="wiadomocs"></div>
         <hr>
-      </main>
+      </section>
       <footer>
         Autor strony: <b>PESEL</b>
     </footer>
-  </section>
+  </main>
     
   </body>
   </html>

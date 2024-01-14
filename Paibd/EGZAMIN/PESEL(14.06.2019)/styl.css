@@ -2,19 +2,19 @@ body {
   background-color: #EEEEEE;
 }
 
-section {
+main {
   width: 1000px;
   margin: auto;
   text-align: center;
 }
 
-nav, article, footer {
+nav, aside, footer {
   background-color: #C0C0C0;
   height: 100px;
   padding: 10px 0;
 }
 
-article {
+aside {
   width: 400px;
   float: left;
 }
@@ -30,7 +30,7 @@ header {
   clear: both;
 }
 
-main {
+section {
   margin: 50px;
 }
 
@@ -38,7 +38,7 @@ footer {
   text-align: right;
 }
 
-a {
+nav > a {
   color: #555555;
   margin: 50px;
   font-size: 200%;

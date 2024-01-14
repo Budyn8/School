@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamówienia hurtowe</title>
+  <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+  <header><h1>
+    Sieci komputerowe
+  </h1></header>
+  <section id="lewy">
+    <h2>
+      Aktualizacja i zamówienia materiałów
+    </h2>
+    <p>
+      Do wewnętrznego użytku firmy
+    </p>
+    <img src="obraz.png" alt="sieć komputerowa">
+  </section>
+  <section id="prawy">
+    <table>
+      <tr>
+        <th>Produkt</th>
+        <th>Jednostka</th>
+        <th>Dostępna  ilość</th>
+        <th>Aktualizacja</th>
+        <th>Zamówienie</th>
+      </tr>
+      <tr>
+        <td>Skrętka U/UTP drut</td>
+        <td>metr</td>
+        <td>20</td>
+        <td><input type="button" value="Aktualizuj" class="aktualizuj"></td>
+        <td><input type="button" value="Zamów" class="zamow"></td>
+      </tr>
+      <tr>
+        <td>Skrętka U/UTP linka</td>
+        <td>metr</td>
+        <td>2</td>
+        <td><input type="button" value="Aktualizuj" class="aktualizuj"></td>
+        <td><input type="button" value="Zamów" class="zamow"></td>
+      </tr>
+      <tr>
+        <td>Wtyki 8P8C</td>
+        <td>sztuki</td>
+        <td>10</td>
+        <td><input type="button" value="Aktualizuj" class="aktualizuj"></td>
+        <td><input type="button" value="Zamów" class="zamow"></td>
+      </tr>
+      <tr>
+        <td>Moduły Keystone</td>
+        <td>sztuki</td>
+        <td>30</td>
+        <td><input type="button" value="Aktualizuj" class="aktualizuj"></td>
+        <td><input type="button" value="Zamów" class="zamow"></td>
+      </tr>
+    </table>
+  </section>
+  <footer>
+    <a href="http://sieci.pl/">Nasza strona internetowa</a>
+    <p>Stronę przygotował: numer PESEL</p>
+  </footer>
+  <script>
+
+    var id_zamowienia;
+    const aktualizujElems = document.querySelectorAll(".aktualizuj");
+    const zamowElems = document.querySelectorAll(".zamow");
+
+    const tableRow = document.querySelectorAll("tr");
+
+    const braki = () => {
+      tableRow.forEach( domElems => {
+        let komorka = domElems.querySelectorAll("td")[2];
+        if( komorka ){ 
+          let dostepne = parseInt(komorka.innerText);
+          
+          if( dostepne == 0 ) komorka.style.backgroundColor = "red";
+          else if( dostepne > 0 && dostepne < 6) komorka.style.backgroundColor = "yellow";
+          else komorka.style.backgroundColor = "green";
+        }
+      })
+    }
+    
+    const aktualizuj = ( target ) => {
+      
+      let wartosc = prompt( "Podaj nową ilość:" );
+      alert("Dostępna ilość");
+      target.target.parentNode.parentNode.querySelectorAll("td")[2].innerText = wartosc;
+      braki();
+    } // ❤️ <- dla najlepszego informatyka na dzielni
+
+    const zamow = ( target ) => {
+      id_zamowienia += 1;
+      alert(`Zamówienie nr: ${id_zamowienia} Produkt:  ${target.target.parentNode.parentNode.querySelectorAll("td")[0].innerText}`);
+    }
+
+    window.addEventListener( 'load', () => {
+      braki();
+      id_zamowienia = 0;
+    });
+
+    aktualizujElems.forEach( domElem => {
+      domElem.addEventListener( "click", aktualizuj );
+    });
+
+    zamowElems.forEach( domElem => {
+      domElem.addEventListener( "click", zamow );
+    });
+
+  </script>
+</body>
+</html>
